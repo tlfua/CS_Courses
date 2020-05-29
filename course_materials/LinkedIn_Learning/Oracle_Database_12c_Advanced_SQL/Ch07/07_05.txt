@@ -1,0 +1,12 @@
+ALTER TABLE sales_list
+SPLIT PARTITION sales_other VALUES ('NV') 
+INTO 
+(PARTITION sales_nv,
+PARTITION sales_other);
+
+SELECT count(*) FROM SALES_LIST PARTITION (sales_nv);
+
+INSERT INTO sales_list VALUES  (300, 'Kirk', 'NV', 2300, '01-JAN-2017');
+
+
+SELECT count(*) FROM SALES_LIST PARTITION (sales_nv);

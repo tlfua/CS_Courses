@@ -1,0 +1,14 @@
+sqlplus "/as sysdba"
+
+shutdown immediately;
+startup mount;
+
+set autorecovery on;
+
+show parameter log_archive_format
+
+show parameter log_archive_dest
+
+recover database;
+
+alter database open;

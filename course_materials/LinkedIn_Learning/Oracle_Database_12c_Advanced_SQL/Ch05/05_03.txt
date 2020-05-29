@@ -1,0 +1,17 @@
+update employees set salary = 30000 where employee_id = 100;
+
+update employees set salary = 35000 where employee_id = 100;
+
+commit;
+
+SELECT username,
+       osuser,
+       sid,
+       serial#,
+       lockwait,
+       status,
+       module,
+       machine,
+       program
+FROM   v$session;
+
