@@ -1,0 +1,8 @@
+Q1
+https://en.wikipedia.org/wiki/Convex_hull#Relations_to_other_structures
+
+Q2
+https://math.stackexchange.com/questions/2410875/the-minkowski-sum-of-two-convex-sets-is-convex/2410880
+
+Q3
+http://math.ucr.edu/~res/math145A-2014/affine+convex.pdf

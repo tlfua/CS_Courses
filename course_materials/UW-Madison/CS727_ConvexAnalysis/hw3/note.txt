@@ -1,0 +1,12 @@
+2.2.15: https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf
+
+3.1.13:
+a. For any positive μ, μK = K;
+
+b. conv K is a cone;
+
+c. K◦ is a closed convex cone;
+C∗ is a closed convex cone, since it is the intersection of closed halfspaces
+
+d. K is convex if and only if K + K = K.
+https://math.stackexchange.com/questions/2911164/prove-that-a-cone-is-convex-if-and-only-if-it-is-closed-under-addition
