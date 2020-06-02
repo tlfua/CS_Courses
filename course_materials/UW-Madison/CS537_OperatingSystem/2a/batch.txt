@@ -1,0 +1,8 @@
+ls
+cd ..
+ls
+cd 2a
+ls
+cat Makefile
+history
+history 3
