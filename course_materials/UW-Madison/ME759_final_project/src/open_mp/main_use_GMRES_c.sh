@@ -1,0 +1,1 @@
+g++ main_use_GMRES.cpp use_GMRES.cpp matrix.cpp vector.cpp -Wall -O3 -o main_use_GMRES -std=c++17 -fopenmp
