@@ -1,0 +1,3 @@
+./swyard.py -t /media/sf_Project_1/lru_test.srpy /media/sf_Project_1/myswitch_lru.py -v
+
+./swyard.py -t /media/sf_Project_1/myswitchstp_test_release.py /media/sf_Project_1/myswitch_stp.py -v

@@ -1,0 +1,5 @@
+./swyard.py -t /media/sf_Project_2/stage1_tests.srpy /media/sf_Project_2/myrouter_part1.py -v
+
+./swyard.py -t /media/sf_Project_2/stage2_tests.srpy /media/sf_Project_2/myrouter_part2.py -v
+
+./swyard.py -t /media/sf_Project_2/stage3_tests2.py /media/sf_Project_2/myrouter_part3.py -v
