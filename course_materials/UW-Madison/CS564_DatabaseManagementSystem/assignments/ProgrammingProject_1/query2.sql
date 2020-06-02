@@ -1,0 +1,1 @@
+WITH both(UserID) AS (SELECT UserID FROM Sellers WHERE Sellers.Location = "New York" UNION SELECT UserID FROM Bidders WHERE Bidders.Location = "New York") SELECT COUNT(UserID) FROM both;

@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<pset>
+
+    <!--
+        CS 564, Fall 2018
+        PROBLEM SET 2 SUBMISSION TEMPLATE
+
+        Please copy and paste your SQL queries (and potentially Python and Latex code)
+	into the appropriate spots below.
+
+        When submitting SQL queries, please do not include the intitial
+        %sql or %%sql IPython commands. Just include the SQL code.
+
+        DO NOT DELETE THE <![CDATA[ ... ]]> LINES IN EACH <answer> TAG!
+        Doing so will break the autograder. To avoid accidentally breaking
+        something, please leave all existing comments in this template
+        intact in your submission.
+    -->
+
+    <student>
+        <name>
+            <!-- Insert your full name on the line below. -->
+            Tien-Lung Fu
+        </name>
+        <netid>
+            <!-- Insert your NetID (NOT your student ID number!) below. -->
+            tfu37
+        </netid>
+        <studentid>
+            <!-- Insert your student ID number below. -->
+            9079952371
+        </studentid>
+    </student>
+
+
+    <!-- BEGIN PROBLEM 1 -->
+    <answer number="1a">
+        <!-- Paste your solution to problem 1, part (a) below this line. --><![CDATA[
+
+SELECT hosp1.provider
+FROM hospital AS hosp1, hospital AS hosp2
+WHERE hosp1.provider = hosp2.provider AND (hosp1.hospital <> hosp2.hospital OR hosp1.address <> hosp2.address
+                    OR hosp1.city <> hosp2.city OR hosp1.state <> hosp2.state OR hosp1.zip <> hosp2.zip OR
+                     hosp1.county <> hosp2.county OR hosp1.phone_number <> hosp2.phone_number OR
+                    hosp1.hospital_type <> hosp2.hospital_type OR hosp1.hospital_owner <> hosp2.hospital_owner OR
+                     hosp1.emergency_service <> hosp2.emergency_service OR hosp1.condition <> hosp2.condition OR
+                    hosp1.measure_code <> hosp2.measure_code)
+LIMIT 1;
+
+        ]]><!-- End problem 1, part (a). -->
+    </answer>
+    <answer number="1b">
+        <!-- Paste your solution to problem 1, part (b) below this line. --><![CDATA[
+
+SELECT hosp1.zip
+FROM hospital AS hosp1, hospital AS hosp2
+WHERE hosp1.zip = hosp2.zip AND (hosp1.city <> hosp2.city OR hosp1.state <> hosp2.state)
+LIMIT 1;
+
+        ]]><!-- End problem 1, part (b). -->
+    </answer>
+    <!-- END PROBLEM 1 -->
+
+
+    <!-- BEGIN PROBLEM 2 -->
+    <answer number="2a">
+        <!-- Paste your solution to problem 2, part (a) below this line. --><![CDATA[
+
+answer = True
+explanation = "A's closure is {C,D,E,F}. By rule of augmentation, A,B has the same closure, which means A,B is a super key"
+
+        ]]><!-- End problem 2, part (a). -->
+    </answer>
+    <answer number="2b">
+        <!-- Paste your solution to problem 2, part (b) below this line. --><![CDATA[
+
+answer = False
+explanation = "Case 1: Joining ABC, EFA to ABCEF is lossless-join, since A is a super key in EFA. However,\
+joining CDE and ABCEF is not, since C,E does not have dependency thereby C and E can not be super key in \
+either CDE or ABCEF. Case 2: Joining ABC, CDE to ABCDE is not lossless-join, since C can not be super key in \
+either ABC or CDE. Case3: Joining CDE, EFA to ACDEF is not lossless-join, since E can not be super key in \
+either CDE or EFA"
+
+        ]]><!-- End problem 2, part (b). -->
+    </answer>
+    <answer number="2c">
+        <!-- Paste your solution to problem 2, part (c) below this line. --><![CDATA[
+
+answer = False
+explanation = "ABC has A->C, CDE has D->C, EFA has A->E. By the three dependencies, we can not enforce A->D and D->F"
+
+        ]]><!-- End problem 2, part (c). -->
+    </answer>
+    <answer number="2d">
+        <!-- Paste your solution to problem 2, part (d) below this line. --><![CDATA[
+
+answer = True
+explanation = "A->D and D->C, D->F. By rule of transivity, A->C,F"
+
+        ]]><!-- End problem 2, part (d). -->
+    </answer>
+    <answer number="2e">
+        <!-- Paste your solution to problem 2, part (e) below this line. --><![CDATA[
+
+answer = False
+explanation = "all A,B,C,D,E,F are not super key"
+
+        ]]><!-- End problem 2, part (e). -->
+    </answer>
+    <!-- END PROBLEM 2 -->
+
+    <!-- BEGIN PROBLEM 3 -->
+    <answer number="3a">
+        <!-- Paste your solution to problem 3, part (a) below this line. --><![CDATA[
+
+$$   \pi_{name}(\sigma_{affiliation = "UW-Madison"}(Person \bowtie ((Author) \bowtie_{year = 2018} (JournalArticle)))) - \pi_{name}(\sigma_{affiliation = "UW-Madison"}(Person \bowtie ((Author) \bowtie_{year = 2018} (ConferenceArticle)))) $$
+
+        ]]><!-- End problem 3, part (a). -->
+    </answer>
+    <answer number="3b">
+        <!-- Paste your solution to problem 3, part (b) below this line. --><![CDATA[
+
+$$ \pi_{name}(\sigma_{name != "John Doe"}(Author\bowtie (\pi_{articleID}(\sigma_{author = "John Doe"}(Author \bowtie JournalArticle)) \cup \pi_{articleID}(\sigma_{author = "John Doe"}(Author \bowtie ConferenceArticle)))))$$
+
+        ]]><!-- End problem 3, part (b). -->
+    </answer>
+    <answer number="3c">
+        <!-- Paste your solution to problem 3, part (c) below this line. --><![CDATA[
+
+$$\gamma_{COUNT(articleID)} (\pi_{articleID}((\sigma_{year = 2018, name = "John Doe"}Author \bowtie JournalArticle) \cup (\sigma_{year = 2018, name = "John Doe"}Author \bowtie ConferenceArticle))) $$
+
+        ]]><!-- End problem 3, part (c). -->
+    </answer>
+    <answer number="3d">
+    <!-- Paste your solution to problem 3, part (d) below this line. --><![CDATA[
+
+$$
+\pi_{name}(\sigma_{ConferenceCount >= JournalCount, ConferenceYear = JournalYear, 2000 <= ConferenceYear <= 2018, 2000 <= JournalYear <= 2018} ((\rho_{name, ConferenceYear, ConferenceCount}(\gamma_{name, year, COUNT(articleID)} (Author \bowtie ConferenceArticle))) \bowtie (\rho_{name, JournalYear, JournalCount}(\gamma_{name, year, COUNT(articleID)} (Author \bowtie JournalArticle)))) )
+$$
+
+        ]]><!-- End problem 3, part (d). -->
+    </answer>
+    <!-- END PROBLEM 3 -->
+
+</pset>

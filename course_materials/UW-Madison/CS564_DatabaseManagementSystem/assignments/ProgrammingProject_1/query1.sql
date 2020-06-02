@@ -1,0 +1,1 @@
+WITH both(UserID) AS (SELECT UserID FROM Sellers UNION SELECT UserID FROM Bidders) SELECT COUNT(UserID) FROM both;
