@@ -1,0 +1,5 @@
+01,A,calories,5,fat,20,carbohydrate,1,fiber,1,protein,0
+02,B,calories,2,fat,30,carbohydrate,2,fiber,2,protein,4
+03,C,calories,1,fat,20,carbohydrate,3,fiber,3,protein,3
+04,D,calories,4,fat,30,carbohydrate,4,fiber,4,protein,2
+05,E,calories,3,fat,30,carbohydrate,5,fiber,5,protein,0
