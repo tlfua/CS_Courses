@@ -1,0 +1,2 @@
+g++ comparisons_count.cpp -o comparisons_count
+./comparisons_count

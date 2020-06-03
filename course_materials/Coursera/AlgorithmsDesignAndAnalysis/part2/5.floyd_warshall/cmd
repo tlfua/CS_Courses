@@ -1,0 +1,2 @@
+g++ -std=c++11 floyd_warshall.cpp -o floyd_warshall
+./floyd_warshall g1.txt g2.txt g3.txt

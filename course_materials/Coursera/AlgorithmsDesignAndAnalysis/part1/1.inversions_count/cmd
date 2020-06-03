@@ -1,0 +1,2 @@
+g++ split_invs.cpp -o split_invs
+./split_invs

@@ -1,0 +1,2 @@
+g++ clustering.cpp -std=c++11 -o clustering
+./clustering clustering1.txt 4

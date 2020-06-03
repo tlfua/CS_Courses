@@ -1,0 +1,2 @@
+g++ knapsack.cpp -std=c++11 -o knapsack
+./knapsack knapsack1.txt 1

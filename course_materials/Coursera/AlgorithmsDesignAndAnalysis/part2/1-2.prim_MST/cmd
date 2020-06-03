@@ -1,0 +1,2 @@
+g++ prim_MST.cpp -std=c++11 -o prim_MST
+./prim_MST edges.txt

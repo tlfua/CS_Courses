@@ -1,0 +1,2 @@
+g++ max_weight_indep_set.cpp -std=c++11 -o max_weight_indep_set
+./max_weight_indep_set

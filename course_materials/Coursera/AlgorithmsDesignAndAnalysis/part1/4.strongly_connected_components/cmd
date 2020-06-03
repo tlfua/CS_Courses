@@ -1,0 +1,2 @@
+g++ scc.cpp -o scc
+./scc
